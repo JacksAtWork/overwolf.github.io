@@ -1,4 +1,4 @@
-const GamesMetadata = {
+export const GamesMetadata = {
   6365: {
     id: 6365,
     path: "/docs/status/world-of-tanks",

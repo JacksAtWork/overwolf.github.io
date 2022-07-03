@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import GameEventsStatus from '@site/src/components/game-events-status/gameEventsStatus';
 import SpecificGameEventsStatus from '@site/src/components/game-events-status/specificGameEventsStatus';
-import { GamesMetadata } from './gamesMetaData';
+import { GamesMetadata } from '/js/games_metadata';
 
   function EventsData(props) {
     const { allGames, specificGame, gameID, docsPath} = props;
