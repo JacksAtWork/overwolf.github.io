@@ -16,6 +16,7 @@ export const GamesMetadata = {
   10826: {
     id: 10826,
     path: "../status/rainbow-six-siege",
+    compliance: "/docs/start/rainbow-six-siege-compliance",
     iconUrl: "../../img/games-logos/rainbow_six_siege.png",
     iconLargeUrl: "../../img/games-logos/large/rainbow_six_siege.png",
     name: "Rainbow Six: Siege"
@@ -183,7 +184,9 @@ export const GamesMetadata = {
   },
   21626: {
     id: 21626,
-    path: "../status/warzone",
+    path: "/docs/status/warzone",
+    compliance: "/docs/start/warzone-compliance",
+    docs: "/docs/api/overwolf-games-events-warzone",
     iconUrl: "../../img/games-logos/warzone.png",
     iconLargeUrl: "../../img/games-logos/large/warzone.png",
     name: "Call of Duty: Warzone"

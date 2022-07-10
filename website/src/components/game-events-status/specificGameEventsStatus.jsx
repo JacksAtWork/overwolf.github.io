@@ -1,4 +1,5 @@
 import React from 'react';
+import GameInfo from '../game-info/game-info';
 import './gep-game-list.scss'
 
 function SearchBar(props) {
@@ -95,15 +96,17 @@ function SpecificGameEventsStatus(props) {
   // ---------------------------------------------------------------------------
 
   return (
-    <article className="hentry">
+    <article>
       <div className="entry-content">
         <div className="gep-game">
 
-          <h3 className={`game-title ${stateCss}`}>
+          <GameInfo gameID={gameID} showStatus={false} />
+
+          {/* <h3 className={`game-title ${stateCss}`}>
             <img src={imgSrc}  />
             {name}
             <a href={`${docsPath}`} title="full API docs">Go to the API docs page</a>
-          </h3>
+          </h3> */}
 
           <SearchBar></SearchBar>
 
