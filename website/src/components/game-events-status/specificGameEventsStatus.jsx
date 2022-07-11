@@ -1,6 +1,7 @@
 import React from 'react';
 import GameInfo from '../game-info/game-info';
-import './gep-game-list.scss'
+import { stateToCss } from './events-utils/events-utils';
+import './gep-game-list.scss';
 
 function SearchBar(props) {
   return (
@@ -43,29 +44,12 @@ function filterEvents(e) {
 
 function SpecificGameEventsStatus(props) {
 
-  const { gameStatusData, gamesMetaData, gameID, docsPath } = props;
-  // ---------------------------------------------------------------------------
-
-  const stateToCss = (state) => {
-    let css = '';
-    switch (state) {
-      case 1:
-        css = 'good';
-        break;
-      case 2:
-        css = 'medium';
-        break;
-      case 3:
-        css = 'bad';
-        break;
-    }
-    return css;
-  }
+  const { gameStatusData, gameID, docsPath } = props;
   // ---------------------------------------------------------------------------
 
   const getEventsByType = (type) => {
 
-    if (!gameStatusData.features  || gameStatusData.features.length === 0) {
+    if (!gameStatusData.features || gameStatusData.features.length === 0) {
       return (<li className="coming-soon">Coming soon</li>)
     }
 
@@ -90,9 +74,7 @@ function SpecificGameEventsStatus(props) {
 
   const events = getEventsByType(0);
   const updates = getEventsByType(1);
-  const stateCss = stateToCss(gameStatusData.state);
-  const imgSrc = gamesMetaData[gameID].iconLargeUrl;
-  const name = gamesMetaData[gameID].name;
+
   // ---------------------------------------------------------------------------
 
   return (
@@ -101,12 +83,6 @@ function SpecificGameEventsStatus(props) {
         <div className="gep-game">
 
           <GameInfo gameID={gameID} showStatus={false} />
-
-          {/* <h3 className={`game-title ${stateCss}`}>
-            <img src={imgSrc}  />
-            {name}
-            <a href={`${docsPath}`} title="full API docs">Go to the API docs page</a>
-          </h3> */}
 
           <SearchBar></SearchBar>
 

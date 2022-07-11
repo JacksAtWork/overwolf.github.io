@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { GamesMetadata } from '../game-events-status/gamesMetaData';
+import { stateToCss } from '../game-events-status/events-utils/events-utils';
 import './game-info.scss'
 
 
@@ -10,8 +11,8 @@ function GameInfo(props) {
     showDocs = true,
     showStatus = true
   } = props;
-  const [gameStatus, setGameStatus] = useState(null);
 
+  const [gameStatus, setGameStatus] = useState(null);
 
   useEffect(() => {
 
@@ -26,23 +27,6 @@ function GameInfo(props) {
   }, []);
   // ---------------------------------------------------------------------------
 
-  const stateToCss = (state) => {
-    let css = '';
-    switch (state) {
-      case 1:
-        css = 'good';
-        break;
-      case 2:
-        css = 'medium';
-        break;
-      case 3:
-        css = 'bad';
-        break;
-    }
-    return css;
-  }
-  // ---------------------------------------------------------------------------
-
   return (
     <section className='game-info-section'>
       <div className="game-info-item">
@@ -50,9 +34,7 @@ function GameInfo(props) {
         <h1
           className={`game-info-title ${gameStatus ? stateToCss(gameStatus.state) : ''}`}>
 
-          <img
-            src={GamesMetadata[gameID].iconLargeUrl}
-          />
+          <img src={GamesMetadata[gameID].iconLargeUrl}/>
 
           <span>{GamesMetadata[gameID].name}</span>
 
